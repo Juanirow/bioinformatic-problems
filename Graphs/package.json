@@ -1,0 +1,15 @@
+{
+  "name": "graphs-problems",
+  "version": "1.0.0",
+  "description": "API about graphs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Graph",
+    "algorithms"
+  ],
+  "author": "Miguel Angel Galicia <miguel.galiciatorrez@gmail.com>",
+  "license": "MIT"
+}
