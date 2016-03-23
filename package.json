@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/miguellgt/bioinformatic-problems/issues"
   },
-  "homepage": "https://github.com/miguellgt/bioinformatic-problems#readme"
+  "homepage": "https://github.com/miguellgt/bioinformatic-problems#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.2",
+    "mocha": "^2.4.5",
+    "standard": "^6.0.8"
+  }
 }
