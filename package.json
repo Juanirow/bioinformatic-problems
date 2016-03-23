@@ -2,13 +2,21 @@
   "name": "bioinformatic-problems",
   "version": "1.0.0",
   "standard": {
-    "globals": ["describe", "before", "beforeEach", "afterEach", "it", "expect"]
+    "globals": [
+      "describe",
+      "before",
+      "beforeEach",
+      "afterEach",
+      "it",
+      "expect"
+    ]
   },
   "description": "This is a project to solve problems bout bioinformatic.",
   "main": "index.js",
   "scripts": {
     "lint": "standard",
-    "test": "npm run lint && node ./node_modules/mocha/bin/mocha"
+    "test": "npm run lint && mocha test",
+    "test-coverage": "istanbul cover _mocha -- -R spec"
   },
   "repository": {
     "type": "git",
@@ -28,6 +36,11 @@
     "chai": "^3.5.0",
     "istanbul": "^0.4.2",
     "mocha": "^2.4.5",
-    "standard": "^6.0.8"
+    "standard": "^6.0.8",
+    "supertest": "^1.2.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "express": "^4.13.4"
   }
 }
