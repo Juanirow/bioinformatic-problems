@@ -1,0 +1,23 @@
+{
+  "name": "bioinformatic-problems",
+  "version": "1.0.0",
+  "description": "This is a project to solve problems bout bioinformatic.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/miguellgt/bioinformatic-problems.git"
+  },
+  "keywords": [
+    "bioinformatic",
+    "rosalind"
+  ],
+  "author": "Miguel Angel Galicia <miguel.galiciatorrez@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/miguellgt/bioinformatic-problems/issues"
+  },
+  "homepage": "https://github.com/miguellgt/bioinformatic-problems#readme"
+}
