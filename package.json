@@ -1,10 +1,14 @@
 {
   "name": "bioinformatic-problems",
   "version": "1.0.0",
+  "standard": {
+    "globals": ["describe", "before", "beforeEach", "afterEach", "it", "expect"]
+  },
   "description": "This is a project to solve problems bout bioinformatic.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "standard",
+    "test": "npm run lint && node ./node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
