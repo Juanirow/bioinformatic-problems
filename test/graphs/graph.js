@@ -13,9 +13,13 @@ describe('Graph Directed', function () {
       expect(graph).to.be.instanceof(Graph)
       done()
     })
-    it('Should have list of nodes', function (done) {
-      expect(graph).to.have.property('nodes')
-      done()
+    describe('Check Properties -> Nodes and Edges', function () {
+      it('Should have list of nodes', function (done) {
+        var nodes = graph.getNodes()
+        expect(nodes).to.be.an('array')
+        expect(nodes).to.be.empty
+        done()
+      })
     })
   })
 })

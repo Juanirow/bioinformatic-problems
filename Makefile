@@ -1,4 +1,4 @@
 test:
-	@./node_modules/.bin/mocha test --recursive
+	@./node_modules/.bin/mocha test/graphs
 
 .PHONY: test
