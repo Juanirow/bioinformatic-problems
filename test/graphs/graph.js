@@ -1,5 +1,6 @@
 var expect = require('chai').expect
 var Graph = require('../../lib/graphs/graph')
+var Node = require('../../lib/graphs/graph/node.js')
 
 describe('Graph Directed', function () {
   it('Should have a module to represents a Graph directed', function (done) {
@@ -20,6 +21,20 @@ describe('Graph Directed', function () {
         expect(nodes).to.be.empty
         done()
       })
+    })
+    describe('Add a Node', function () {
+      it('Should create an instance of Node', function (done) {
+        var newNode = new Node('A')
+        expect(newNode).to.be.instanceof(Node)
+        done()
+      })
+      // it('The method addNode() should has an instance of Node with parameter', function (done) {
+      //   var newNode = new Node('A')
+      // })
+      // it('Graph should has a method to add a node', function (done) {
+      //   expect(graph.addNode()).to.be.true
+      //   done()
+      // })
     })
   })
 })
