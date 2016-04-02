@@ -61,6 +61,14 @@ describe('Graph Directed', function () {
         expect(graph.addNode({test: 'this a test'})).to.be.false
         done()
       })
+      it('Graph should has a one item in its list of nodes', function (done) {
+        var myGraph = new Graph()
+        var myNode = new Node('A')
+        myGraph.addNode(myNode)
+        expect(myGraph.getNodes().length).to.equal(1)
+        expect(myGraph.getNodes()[0]).to.equal(myNode)
+        done()
+      })
     })
   })
 })
