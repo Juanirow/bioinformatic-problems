@@ -22,19 +22,45 @@ describe('Graph Directed', function () {
         done()
       })
     })
-    describe('Add a Node', function () {
+    describe('Create a Node', function () {
+      var newNode = new Node('A')
       it('Should create an instance of Node', function (done) {
-        var newNode = new Node('A')
         expect(newNode).to.be.instanceof(Node)
         done()
       })
-      // it('The method addNode() should has an instance of Node with parameter', function (done) {
-      //   var newNode = new Node('A')
-      // })
-      // it('Graph should has a method to add a node', function (done) {
-      //   expect(graph.addNode()).to.be.true
-      //   done()
-      // })
+      it('Node should has a name property, its name is A', function (done) {
+        expect(newNode).to.have.property('name', 'A')
+        expect(newNode.name).to.be.a('string')
+        done()
+      })
+      it('Should has a method to get its name', function (done) {
+        expect(newNode.getName()).to.be.equal('A')
+        done()
+      })
+      it('Node should has a edges array with property', function (done) {
+        expect(newNode).to.have.property('edges')
+        expect(newNode.edges).to.be.an('array')
+        done()
+      })
+      it('Node should has a method to get the colletions of edges', function (done) {
+        expect(newNode.getEdges()).to.be.an('array')
+        done()
+      })
+    })
+    describe('Add a new Node to Graph', function () {
+      it('Graph should has a method to add a node called addNode()', function (done) {
+        expect(graph).to.have.property('addNode')
+        expect(graph.addNode).to.be.a('function')
+        done()
+      })
+      it('Method addNode() should has a object of Node with parameter', function (done) {
+        expect(graph.addNode(new Node())).to.be.true
+        done()
+      })
+      it('Method addNode() should return false if its parameter is not an instance of Node', function (done) {
+        expect(graph.addNode({test: 'this a test'})).to.be.false
+        done()
+      })
     })
   })
 })
