@@ -1,3 +1,5 @@
+'use strict'
+
 var expect = require('chai').expect
 var Graph = require('../../lib/graphs/graph')
 var Node = require('../../lib/graphs/graph/node.js')
@@ -67,6 +69,21 @@ describe('Graph Directed', function () {
         myGraph.addNode(myNode)
         expect(myGraph.getNodes().length).to.equal(1)
         expect(myGraph.getNodes()[0]).to.equal(myNode)
+        done()
+      })
+    })
+
+    describe('Retrieve a Node', function () {
+      let graph = new Graph()
+
+      graph.addNode(new Node('A'))
+      graph.addNode(new Node('B'))
+      graph.addNode(new Node('C'))
+
+      let node = graph.retrieveNode('B')
+
+      it('Should get a instance of Node when call retrieveNode() method', function (done) {
+        expect(node).to.be.instanceof(Node)
         done()
       })
     })
