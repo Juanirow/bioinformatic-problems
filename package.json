@@ -17,7 +17,7 @@
     "lint": "standard",
     "test": "npm run lint && make test",
     "test-ci": "make test",
-    "test-cover": "istanbul cover _mocha -- -R spec"
+    "code-coverage": "istanbul cover _mocha -- --recursive -R spec"
   },
   "repository": {
     "type": "git",
