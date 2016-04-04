@@ -9,6 +9,7 @@ describe('Graph Directed', function () {
     expect(Graph).to.be.a('function')
     done()
   })
+
   describe('Create an Graph', function () {
     var graph = new Graph()
     it('Should create an instance of class Graph', function (done) {
@@ -16,6 +17,7 @@ describe('Graph Directed', function () {
       expect(graph).to.be.instanceof(Graph)
       done()
     })
+
     describe('Check Properties -> Nodes and Edges', function () {
       it('Should have list of nodes', function (done) {
         var nodes = graph.getNodes()
@@ -24,6 +26,7 @@ describe('Graph Directed', function () {
         done()
       })
     })
+
     describe('Create a Node', function () {
       var newNode = new Node('A')
       it('Should create an instance of Node', function (done) {
@@ -49,6 +52,7 @@ describe('Graph Directed', function () {
         done()
       })
     })
+
     describe('Add a new Node to Graph', function () {
       it('Graph should has a method to add a node called addNode()', function (done) {
         expect(graph).to.have.property('addNode')
@@ -84,6 +88,21 @@ describe('Graph Directed', function () {
 
       it('Should get a instance of Node when call retrieveNode() method', function (done) {
         expect(node).to.be.instanceof(Node)
+        done()
+      })
+
+      it('Should has a same name the node that was retrieved', function (done) {
+        expect(node.getName()).to.equal('B')
+        done()
+      })
+
+      it('Graph should has a two nodes', function (done) {
+        expect(graph.getNodes().length).to.equal(2)
+        done()
+      })
+
+      it('Should get a false if the node does not exist in the graph', function (done) {
+        expect(graph.retrieveNode('X')).to.be.false
         done()
       })
     })
