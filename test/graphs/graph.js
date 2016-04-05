@@ -26,8 +26,13 @@ describe('Graph', function () {
 
   describe('.addNode(node)', function () {
     let graph = new Graph()
+
     it('should receive a parameter of type Node and return a true if it will', function () {
       expect(graph.addNode(new Node())).to.be.true
+    })
+
+    it('should return a false if it parameter is not an instance of Node', function () {
+      expect(graph.addNode({})).to.be.false
     })
   })
 })
