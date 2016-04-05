@@ -40,7 +40,7 @@ describe('Graph', function () {
       var nodes = [new Node('A'), new Node('B'), new Node('C')]
       for (var i = 0, x = nodes.length; i < x; i++) {
         myGraph.addNode(nodes[i])
-        expect(myGraph.getNodes()[i]).to.equal(nodes[i])
+        expect(myGraph.getNodes()[i]).to.equal(nodes[i]).and.to.has.property('name', nodes[i].getName())
       }
     })
   })
