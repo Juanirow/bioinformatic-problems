@@ -2,7 +2,7 @@
 
 var expect = require('chai').expect
 var Graph = require('../../lib/graphs/graph')
-// var Node = require('../../lib/graphs/graph/node.js')
+var Node = require('../../lib/graphs/graph/node')
 
 describe('Graph', function () {
   describe('constructor()', function () {
@@ -23,28 +23,21 @@ describe('Graph', function () {
       expect(graph.nodes).to.be.empty
     })
   })
+
+  describe('.addNode(node)', function () {
+    let graph = new Graph()
+    it('should receive a parameter of type Node and return a true if it will', function () {
+      expect(graph.addNode(new Node())).to.be.true
+    })
+  })
 })
-// describe('Graph Directed', function () {
-//   it('Should have a module to represents a Graph directed', function (done) {
-//     expect(Graph).to.be.a('function')
-//     done()
-//   })
 
 //   describe('Create an Graph', function () {
-//     var graph = new Graph()
 //     it('Should create an instance of class Graph', function (done) {
+//     var graph = new Graph()
 //       expect(new Graph()).to.be.an('object')
 //       expect(graph).to.be.instanceof(Graph)
 //       done()
-//     })
-
-//     describe('Check Properties -> Nodes and Edges', function () {
-//       it('Should have list of nodes', function (done) {
-//         var nodes = graph.getNodes()
-//         expect(nodes).to.be.an('array')
-//         expect(nodes).to.be.empty
-//         done()
-//       })
 //     })
 
 //     describe('Create a Node', function () {
