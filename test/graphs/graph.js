@@ -72,5 +72,17 @@ describe('Graph', function () {
       expect(res).to.have.property('node')
       expect(res.node.getName()).to.equal('A')
     })
+
+    it('should delete the node B, so that the graph just has two nodes [{A}, {X}]', function () {
+      let graph = new Graph('patito')
+      graph.addNode(new Node('A'))
+      graph.addNode(new Node('B'))
+      graph.addNode(new Node('X'))
+
+      graph.deleteNode('B')
+
+      expect(graph.getNodes().length).to.equal(2)
+      expect(graph.getNodes()[0].getName()).to.equal('A')
+    })
   })
 })
