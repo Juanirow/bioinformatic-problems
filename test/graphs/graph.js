@@ -55,34 +55,19 @@ describe('Graph', function () {
       expect(graph.deleteNode('A')).to.be.an('object')
     })
 
-    it('should return an object literal, where has a property {status} equal false if the parameter is undefined', function () {
+    it('should return an object literal, with a status equal to false if the parameter is undefined', function () {
       expect(graph.deleteNode()).to.have.property('status', false)
+    })
+
+    it("should return an object literal, with a message equal to 'The node's name is required'", function () {
+      expect(graph.deleteNode()).to.have.property('message', "The node's name is required")
+    })
+
+    it("should return an object literal, with a message equal to 'The node's name has to be a String'", function () {
+      expect(graph.deleteNode(23)).to.have.property('message', "The node's name has to be a String")
+    })
+    it("should return an object literal, with a message equal to 'The node X was not found'", function () {
+      expect(graph.deleteNode('X')).to.have.property('message', 'The node X was not found')
     })
   })
 })
-//     describe('Retrieve a Node', function () {
-//       let graph = new Graph()
-//       let node = graph.retrieveNode('B')
-
-//       it('Should get a instance of Node when call retrieveNode() method', function (done) {
-//         expect(node).to.be.instanceof(Node)
-//         done()
-//       })
-
-//       it('Should has a same name the node that was retrieved', function (done) {
-//         expect(node.getName()).to.equal('B')
-//         done()
-//       )
-
-//       it('Graph should has a two nodes', function (done) {
-//         expect(graph.getNodes().length).to.equal(2)
-//         done()
-//       })
-
-//       it('Should get a false if the node does not exist in the graph', function (done) {
-//         expect(graph.retrieveNode('X')).to.be.false
-//         done()
-//       })
-//     })
-//   })
-// })
