@@ -24,7 +24,7 @@ describe('Graph', function () {
     })
   })
 
-  describe('.addNode(node)', function () {
+  describe('.addNode(name)', function () {
     let graph = new Graph()
 
     it('should receive a parameter of type Node and return true if it will', function () {
@@ -44,31 +44,20 @@ describe('Graph', function () {
       }
     })
   })
-})
-//   describe('Create an Graph', function () {
-//     it('Should create an instance of class Graph', function (done) {
-//     var graph = new Graph()
-//       expect(new Graph()).to.be.an('object')
-//       expect(graph).to.be.instanceof(Graph)
-//       done()
-//     })
-//       it('Graph should has a one item in its list of nodes', function (done) {
-//         var myGraph = new Graph()
-//         var myNode = new Node('A')
-//         myGraph.addNode(myNode)
-//         expect(myGraph.getNodes().length).to.equal(1)
-//         expect(myGraph.getNodes()[0]).to.equal(myNode)
-//         done()
-//       })
-//     })
 
+  describe('.deleteNode(name)', function () {
+    let graph = new Graph()
+    let node = new Node('A')
+
+    graph.addNode(node)
+
+    it('should return an javascript object', function () {
+      expect(graph.deleteNode('A')).to.be.an('object')
+    })
+  })
+})
 //     describe('Retrieve a Node', function () {
 //       let graph = new Graph()
-
-//       graph.addNode(new Node('A'))
-//       graph.addNode(new Node('B'))
-//       graph.addNode(new Node('C'))
-
 //       let node = graph.retrieveNode('B')
 
 //       it('Should get a instance of Node when call retrieveNode() method', function (done) {
@@ -79,7 +68,7 @@ describe('Graph', function () {
 //       it('Should has a same name the node that was retrieved', function (done) {
 //         expect(node.getName()).to.equal('B')
 //         done()
-//       })
+//       )
 
 //       it('Graph should has a two nodes', function (done) {
 //         expect(graph.getNodes().length).to.equal(2)
