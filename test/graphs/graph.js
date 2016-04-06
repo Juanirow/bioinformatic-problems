@@ -51,10 +51,6 @@ describe('Graph', function () {
 
     graph.addNode(node)
 
-    it('should return an object literal', function () {
-      expect(graph.deleteNode('A')).to.be.an('object')
-    })
-
     it('should return an object literal, with a status equal to false if the parameter is undefined', function () {
       expect(graph.deleteNode()).to.have.property('status', false)
     })
@@ -66,8 +62,15 @@ describe('Graph', function () {
     it("should return an object literal, with a message equal to 'The node's name has to be a String'", function () {
       expect(graph.deleteNode(23)).to.have.property('message', "The node's name has to be a String")
     })
+
     it("should return an object literal, with a message equal to 'The node X was not found'", function () {
       expect(graph.deleteNode('X')).to.have.property('message', 'The node X was not found')
+    })
+
+    it('should return a object that has the node with property where its name is equal to A', function () {
+      let res = graph.deleteNode('A')
+      expect(res).to.have.property('node')
+      expect(res.node.getName()).to.equal('A')
     })
   })
 })
