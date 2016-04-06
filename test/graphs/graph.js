@@ -51,8 +51,12 @@ describe('Graph', function () {
 
     graph.addNode(node)
 
-    it('should return an javascript object', function () {
+    it('should return an object literal', function () {
       expect(graph.deleteNode('A')).to.be.an('object')
+    })
+
+    it('should return an object literal, where has a property {status} equal false if the parameter is undefined', function () {
+      expect(graph.deleteNode()).to.have.property('status', false)
     })
   })
 })
