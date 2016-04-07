@@ -85,4 +85,19 @@ describe('Graph', function () {
       expect(graph.getNodes()[0].getName()).to.equal('A')
     })
   })
+
+  describe('.createEdge(nodeA, nodeB)', function () {
+    let graph = new Graph()
+
+    let nodeA = new Node('A')
+    let nodeB = new Node('B')
+
+    it('should has two parameters of type Node', function () {
+      expect(graph.createEdge(nodeA, nodeB)).to.be.true
+    })
+
+    it('should get a false if the parameters are not defined', function () {
+      expect(graph.createEdge()).to.be.false
+    })
+  })
 })
