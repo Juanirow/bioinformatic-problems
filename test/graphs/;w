@@ -88,26 +88,18 @@ describe('Graph', function () {
 
   describe('.createEdge(nodeA, nodeB)', function () {
     let graph = new Graph()
-    let nodeO = new Node('A')
-    let nodeD = [new Node('B'), new Node('C'), new Node('D'), nodeO]
+
+    let nodeA = new Node('A')
+    let nodeB = new Node('B')
 
     it('should has two parameters of type Node', function () {
-      expect(graph.createEdge(nodeO, nodeD[0])).to.be.true
+      expect(graph.createEdge(nodeA, nodeB)).to.be.true
     })
 
     it('should get a false if the parameters are not defined', function () {
       expect(graph.createEdge()).to.be.false
     })
 
-    it("should push A, B and C into node A's edges", function () {
-      graph.createEdge(nodeO, nodeD[1])
-      graph.createEdge(nodeO, nodeD[2])
-      graph.createEdge(nodeO, nodeD[3])
-
-      let edgesNodeO = nodeO.getEdges()
-      for (var i = 0, x = edgesNodeO.length; i < x; i++) {
-        expect(nodeD[i]).to.equal(edgesNodeO[i])
-      }
-    })
+    it("should push nodeB into nodeA's edges")
   })
 })
